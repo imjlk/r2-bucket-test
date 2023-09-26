@@ -56,5 +56,5 @@ export function MultipartFileUploader({
   uppy.on("complete", (result) => {
     onUploadSuccess(result);
   });
-  return <Dashboard uppy={uppy} />;
+  return <Dashboard uppy={uppy} width="100%" />;
 }
