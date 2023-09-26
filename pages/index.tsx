@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { FileUploader } from "../components/FileUploader";
 import { MultipartFileUploader } from "../components/MultipartFileUploader";
 import styles from "../styles/Home.module.css";
 
@@ -12,24 +11,12 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1 className={styles.title}>Upload files to R2 bucket</h1>
-
+        <h1 className={styles.title}>파일 업로드 샘플</h1>
         <p className={styles.description}>
-          You can drag and drop file(s) or directories below to upload them into
-          a blob storage bucket.
+          드래그 앤 드롭으로 파일을 업로드 할 수 있습니다.
         </p>
-
         <div>
-          <h3>Simple upload</h3>
-          <FileUploader
-            onUploadSuccess={(result) => console.log(JSON.stringify(result))}
-          />
-        </div>
-
-        <hr />
-
-        <div>
-          <h3>Multipart upload</h3>
+          <h3>대용량 파일 업로드</h3>
           <MultipartFileUploader
             onUploadSuccess={(result) => console.log(JSON.stringify(result))}
           />
