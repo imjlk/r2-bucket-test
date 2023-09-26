@@ -1,5 +1,6 @@
 import React from "react";
 import Uppy, { type UploadResult } from "@uppy/core";
+import Korean from "@uppy/locales/lib/ko_KR";
 import { Dashboard } from "@uppy/react";
 import { sha256 } from "crypto-hash";
 import AwsS3Multipart from "@uppy/aws-s3-multipart";
@@ -29,6 +30,7 @@ export function MultipartFileUploader({
   const uppy = React.useMemo(() => {
     const uppy = new Uppy({
       autoProceed: true,
+      locale: Korean
     }).use(AwsS3Multipart, {
       createMultipartUpload: async (file) => {
         const arrayBuffer = await new Response(file.data).arrayBuffer();
